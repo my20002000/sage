@@ -7,7 +7,7 @@ on:
 jobs:
   build:
 
-    runs-on: fedora-34
+    runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v2
@@ -18,7 +18,7 @@ jobs:
     - name: Run
       run: |
         git checkout develop
-        dnf install -y binutils make m4 python3 perl perl-ExtUtils-MakeMaker tar gcc gcc-c++ findutils which diffutils perl-IPC-Cmd
+        apt install -y binutils make m4 perl python3 tar bc gcc g++ ca-certificates
         export MAKE="make -j4"
         ./configure
         make
