@@ -19,3 +19,7 @@ jobs:
         echo "MAKE=make -j4" >> $GITHUB_ENV
     - name: Run2
       run: pwd
+    - name: Run3
+      run: ./configure
+    - name: Run4
+      run: make
