@@ -12,6 +12,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+    - name: make configure
+      run: make configure
     - name: configure
       run: ./configure
     - name: make
