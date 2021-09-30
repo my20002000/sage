@@ -16,7 +16,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Run
       run: |
-        git checkout develop
+        apt update
         apt install -y binutils make m4 perl python3 tar bc gcc g++ ca-certificates
         export MAKE="make -j4"
         ./configure
