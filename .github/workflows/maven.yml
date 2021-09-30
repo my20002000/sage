@@ -18,6 +18,7 @@ jobs:
       run: |
         sudo apt update
         sudo apt install -y binutils make m4 perl python3 tar bc gcc g++ ca-certificates
+        cd sage/
         export MAKE="make -j4"
         ./configure
         make
