@@ -14,13 +14,15 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: RunInit
+      run: |
+        echo "MAKE=make -j4" >> $GITHUB_ENV
     - name: Run
       run: |
         sudo apt update
         sudo apt install -y binutils make m4 perl python3 tar bc gcc g++ ca-certificates
     - name: Run2
       run: |
-        export MAKE="make -j4"
         ./configure
         make
         tree ./
