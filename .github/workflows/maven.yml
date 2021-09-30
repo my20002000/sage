@@ -18,7 +18,4 @@ jobs:
       run: |
         echo "MAKE=make -j4" >> $GITHUB_ENV
     - name: Run2
-      run: |
-        pwd
-        ls -al
-      working-directory: ./sage
+      run: pwd
