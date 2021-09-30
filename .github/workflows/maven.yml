@@ -6,20 +6,13 @@ name: Java CI with Maven
 on:
   push:
     branches: [ develop ]
-
 jobs:
-  build:
-
+  build-ubuntu-default:
+  # checking pure lib source distribution with plain configure & make
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v2
-    - name: RunInit
-      run: |
-        echo "MAKE=make -j4" >> $GITHUB_ENV
-    - name: Run2
-      run: pwd
-    - name: Run3
+    - name: configure
       run: ./configure
-    - name: Run4
+    - name: make
       run: make
